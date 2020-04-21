@@ -1,14 +1,12 @@
 language: python
 python:
   - "3.8"
-  - "3.8-dev"  # 3.8 development branch
-  - "nightly"  # nightly build
-# command to install dependencies
+  - "3.8-dev" 
+  #- "nightly"  # nightly build
 before_install:
   - python3 --version
   - pip3 install -U pip
 install:
   - pip3 install -r requirements.txt
-# command to run tests
 script:
   - pytest
