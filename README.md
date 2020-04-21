@@ -1,6 +1,6 @@
 # Covid-19 ChatBot
 
-![MIT license](https://img.shields.io/badge/License-MIT-blue.svg) [![Build Status](https://travis-ci.com/username/projectname.svg?branch=master)](https://travis-ci.com/ari-hacks/covid-chatbot)
+![MIT license](https://img.shields.io/badge/License-MIT-blue.svg) [![Build Status](https://travis-ci.com/ari-hacks/covid-chatbot.svg?branch=master)](https://travis-ci.com/ari-hacks/covid-chatbot)
 
 
 

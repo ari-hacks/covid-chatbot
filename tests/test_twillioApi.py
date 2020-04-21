@@ -1,8 +1,8 @@
 
 from fastapi import FastAPI
 from fastapi.testclient import TestClient
+from app.main import app
 
-app = FastAPI()
 client = TestClient(app)
 
 def test_read():
@@ -13,4 +13,4 @@ def test_read():
 def test_health():
     response = client.get("/health-check")
     assert response.status_code == 200
-    assert response.json() == {"msg": "Healthy as fuck"}
+    assert response.json() == {"message": "Healthy as fuck"}
