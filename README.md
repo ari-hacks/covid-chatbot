@@ -1,1 +1,1 @@
-# covid-chatbot
+# covid-chatbot-app
