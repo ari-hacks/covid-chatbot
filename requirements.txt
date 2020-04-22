@@ -3,7 +3,7 @@ twilio==6.38.1
 fastapi==0.52.0
 pytest==5.4.1
 uvicorn==0.11.3
-
+dotenv==0.10.5
 # fastapi==0.52.0
 # numpy==1.18.1
 # pandas==1.0.1
