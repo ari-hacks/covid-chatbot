@@ -1,11 +1,27 @@
 import httpx
 import settings
+import logging
+import random 
 
+# TODO: 
+# replace guardian api with positive coronavirus related tweets 
+# 
+logging.basicConfig(level=logging.INFO)
 
-def getUsStats():
-    headers = {'x-rapidapi-host': settings.X_RAPIDAPI_HOST,
-               'x-rapidapi-key': settings.X_RAPIDAPI_KEY, 'accept': 'application/json'}
-    response =  httpx.get(settings.COVID_STATS_ENDPOINT + '?format=json&name=usa', headers=headers)
-    return response.json()
-   
-   
+def getNews():
+    results = []
+    url = []
+    params = {
+         'order-by': "relevance",
+         'show-fields': 'webTitle,webUrl',
+         'page-size': 10,
+         'from-date':'2020-03-20',
+         'api-key': settings.GUARDIAN_KEY
+    }
+    response = httpx.get(settings.GUARDIAN_ENDPOINT, params=params)
+    res = response.json()
+    results.extend(res['response']['results'])
+    for r in results:
+        url.append(r['webUrl'])
+    return random.choice(url)
+

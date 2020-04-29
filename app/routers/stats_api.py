@@ -1,6 +1,5 @@
 from fastapi import APIRouter, Request, Response, Body, HTTPException,Header
 from twilio.twiml.messaging_response import Body, Message, Redirect, MessagingResponse
-from ..models.sms import SmsMessage
 from fastapi.responses import PlainTextResponse
 import re
 import settings
@@ -11,7 +10,7 @@ router = APIRouter()
 
 @router.get("/health-check")
 async def health():
-    return {"Message":'healthy af in stats endpoint'}
+    return {"Message":'healthy stats endpoint'}
 
 
 @router.get("/usa")
