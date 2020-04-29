@@ -1,1 +1,1 @@
-web: gunicorn covid-chatbot:app
+web: gunicorn app:app
