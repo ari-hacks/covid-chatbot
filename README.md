@@ -3,23 +3,26 @@
 ![MIT license](https://img.shields.io/badge/License-MIT-blue.svg) [![Build Status](https://travis-ci.com/ari-hacks/covid-chatbot.svg?branch=master)](https://travis-ci.com/ari-hacks/covid-chatbot)
 
 
+## Table of Contents
+## [About](#About)
+## [Features](#Features)
+## [How to Use it](#how-to-use-it)
+
 
 ## About
 
-This is a chatbot that sends and receives messages over WhatsApp via the Twilio api to provide Covid-19 stats from the US and the UK.
+This is a Chatbot that sends and receives messages over WhatsApp via the Twilio api to provide Covid-19 stats from the US and the UK. The bot also provides positive news articles to read during these tough times. 
 
 ### How it works
 
-This application is only a barebones Node.js application using Express.js. Whenever, possible we should be using this. However, if you are using a framework like React.js, Angular or similar that comes with their own standardized application structure, you should try to merge these by using the same `README` structure and test coverage, configuration etc. as this project.
+Users interact with the WhatsApp App to communicate with the chatbot. 
 
-<!--
-**TODO: UML Diagram**
+The Chatbot replies to greetings along with different variations of the following questions.
 
-We can render UML diagrams using [Mermaid](https://mermaidjs.github.io/).
+Sample Questions:
 
 
-**TODO: Describe how it works**
--->
+
 
 ## Features
 
