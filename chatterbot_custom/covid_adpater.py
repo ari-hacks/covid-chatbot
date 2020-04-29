@@ -4,7 +4,6 @@ import logging
 from app.services.stats_service import getUsStats, getUkStats
 from app.services.news_service import getNews
 import random
-import json
 
 logging.basicConfig(level=logging.INFO)
 
