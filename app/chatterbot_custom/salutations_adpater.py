@@ -24,7 +24,7 @@ class SalutationsAdapter(LogicAdapter):
              #add help response
             responses = ["""Hello \U0001F31F""", "Hi there!", "How are you","Hi, My name is Rona"]
             response_statement = Statement(random.choice(responses))
-            response_statement.confidence = .85
+            response_statement.confidence = 1
             logging.info(response_statement)
             return response_statement
    
@@ -32,7 +32,7 @@ class SalutationsAdapter(LogicAdapter):
              #add help response
             responses = ["""Bye \U0001F31F""", "Chat later!", "Have a good one"]
             response_statement = Statement(random.choice(responses))
-            response_statement.confidence = .95
+            response_statement.confidence = 1
             logging.info(response_statement)
             return response_statement
         else: 
