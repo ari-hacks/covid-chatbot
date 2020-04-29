@@ -6,7 +6,8 @@ from ..services.stats_service import getUsStats,getUkStats
 from chatterbot import ChatBot
 from chatterbot.trainers import ChatterBotCorpusTrainer
 import urllib
-import chatterbot_custom
+import app.chatterbot_custom
+# import chatterbot_custom
 import logging
 
 logging.basicConfig(level=logging.INFO)
@@ -19,7 +20,7 @@ rona = ChatBot('Rona',
             'maximum_similarity_threshold': 0.65
         } ,
          {
-          'import_path':'chatterbot_custom.covid_adpater.MyLogicAdapter',
+          'import_path':'app.chatterbot_custom.covid_adpater.MyLogicAdapter',
           'response_selection_method': 'chatterbot.response_selection.get_first_response',
           'statement_comparison_function': 'chatterbot.comparisons.levenshtein_distance'
         },
