@@ -114,15 +114,11 @@ npm test
 
 ### Cloud deployment
 
-Additionally to trying out this application locally, you can deploy it to a variety of host services. Here is a small selection of them.
+Additionally to trying out this application locally, you can deploy it to Heroku
 
-Please be aware that some of these might charge you for the usage or might make the source code for this application visible to the public. When in doubt research the respective hosting service first.
+Please Sign up on [Heroku.com](https://www.heroku.com/)  before Deploying. 
 
-| Service                           |                                                                                                                                                                                                                           |
-| :-------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [Heroku](https://www.heroku.com/) | [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)                                                                                                                                       |
-| [Glitch](https://glitch.com)      | [![Remix on Glitch](https://cdn.glitch.com/2703baf2-b643-4da7-ab91-7ee2a2d00b5b%2Fremix-button.svg)](https://glitch.com/edit/#!/remix/clone-from-repo?REPO_URL=https://github.com/twilio-labs/sample-template-nodejs.git) |
-| [Zeit](https://zeit.co/)          | [![Deploy with ZEIT Now](https://zeit.co/button)](https://zeit.co/new/project?template=https://github.com/twilio-labs/sample-template-nodejs/tree/master)                                                                 |
+ [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)                                               
 
 ## Resources
 
