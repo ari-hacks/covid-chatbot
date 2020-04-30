@@ -1,11 +1,11 @@
-# Covid-19 ChatBot
+# Covid-19 ChatBot 🤖
 
 ![MIT license](https://img.shields.io/badge/License-MIT-blue.svg) [![Build Status](https://travis-ci.com/ari-hacks/covid-chatbot.svg?branch=master)](https://travis-ci.com/ari-hacks/covid-chatbot)
 
 
 ## About
 
-This is a simple api that gives stats on Covid-19 in the US & UK. The api also provides some good news in light of recent times all transmitted via WhatsApp.
+This is a simple ChatBot that communicates via Twilio's API on WhatsApp. The Bot gives Covid statistics from the US & the UK. It also provides some positive news articles to read in light of recent times.
 
 ### How it works
 
@@ -23,7 +23,7 @@ How many uk confirmed cases? | Confirmed Uk Cases 165221
 What are the us covid stats? | United States Stats: confirmed: 1055303 recovered: 144423 critical: 18665 deaths: 61112
 uk stats |United Kingdom Stats: confirmed: 165221 recovered: 1918 critical: 1559 deaths: 26097
 what are the uk covid stats? | United Kingdom Stats: confirmed: 165221 recovered: 1918 critical: 1559 deaths: 26097
-how many have us recovered cases? | Recovered Us Cases 147411
+how many us recovered cases are there? | Recovered Us Cases 147411
 tell me some positive news, please? | https://www.theguardian.com/news/2020/apr/13/coronavirus-looking-for-good-news-run-for-heroes-and-an-opera-singing-doctor
 
 
@@ -92,7 +92,7 @@ uvicorn app.main:app --reload
 
 ![Alt text](/ngork_ex.png?raw=true "Demo")
 
-
+7. Next follow these [ twilio instructions](https://www.twilio.com/console/sms/whatsapp/learn) to connect your account to WhatsApp and send a message 🎉🎉🎉
 
 ### Tests
 
@@ -118,17 +118,20 @@ If you run into issues with nltk
 
 ### Cloud deployment
 
-To try this application locally, you can deploy it to Heroku
+To try this application locally, you can deploy it to Heroku. 
+
+```bash 
+#check if app is running with this endpoint 
+https://heroku-porject.herokuapp.com/twilio/health-check
+
+#add this endpoint into your twilio snadbox
+https://heroku-porject.herokuapp.com/twilio/bot
+```
+
 
 Please [Sign up](https://www.heroku.com/)  before Deploying. 
 
  [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)                                               
-
-
-
-## Contributing
-
-This template is open source and welcomes contributions. All contributions are subject to our [Code of Conduct](https://github.com/twilio-labs/.github/blob/master/CODE_OF_CONDUCT.md).
 
 
 ## License

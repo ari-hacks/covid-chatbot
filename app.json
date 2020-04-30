@@ -25,10 +25,6 @@
       "description": "The Guardian API key",
       "value": ""
     },
-    "NEWS_API_KEY": {
-      "description": "",
-      "value": ""
-    },
     "RAPDIAPI_PROJECT": {
       "description": "Rapid api account information",
       "value": ""

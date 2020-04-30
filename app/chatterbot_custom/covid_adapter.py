@@ -6,9 +6,9 @@ from app.services.news_service import getNews
 import random
 
 logging.basicConfig(level=logging.INFO)
+ 
 
-
-class MyLogicAdapter(LogicAdapter):
+class CustomLogicAdapter(LogicAdapter):
 
 
     def can_process(self, statement):
@@ -118,7 +118,7 @@ class MyLogicAdapter(LogicAdapter):
         
         elif 'hi' or 'howdy' or 'hello' in user_input:
              #add help response
-            responses = ["""Hello \U0001F31F""", "Hi there!", "How are you","Hi, My name is Rona"]
+            responses = ["""Hello \U0001F31F""", "Hi there!"]
             response_statement = Statement(random.choice(responses))
             response_statement.confidence = 1
             logging.info(response_statement)

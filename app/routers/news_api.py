@@ -12,8 +12,6 @@ router = APIRouter()
 async def health():
     return {"Message":'healthy news endpoint'}
 
-#route that gets gaurdian good news and randomly selects a link to send after looping through list
-
 @router.get("/theguardian")
 async def getGoodNews():
     return getNews()
