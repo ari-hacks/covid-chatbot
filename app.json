@@ -36,6 +36,10 @@
     "X_RAPIDAPI_KEY": {
       "description": "Rapid API key",
       "value": ""
+    },
+    "BASE_URL": {
+      "description": "local base url:http://127.0.0.1:8000",
+      "value": ""
     }
   },
   "image": "heroku/python",

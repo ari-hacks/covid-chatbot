@@ -70,7 +70,8 @@ pip3 install pytest
 pip3 install uvicorn    
 pip3 install fastapi  
 pip3 install nltk   
-pip3 install httpx         
+pip3 install httpx
+pip3 install requests_mock         
 ```
 
 4. Run the application
