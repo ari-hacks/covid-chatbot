@@ -3,65 +3,52 @@
 ![MIT license](https://img.shields.io/badge/License-MIT-blue.svg) [![Build Status](https://travis-ci.com/ari-hacks/covid-chatbot.svg?branch=master)](https://travis-ci.com/ari-hacks/covid-chatbot)
 
 
-## Table of Contents
-## [About](#About)
-## [Features](#Features)
-## [How to Use it](#how-to-use-it)
-
-
 ## About
 
-This is a Chatbot that sends and receives messages over WhatsApp via the Twilio api to provide Covid-19 stats from the US and the UK. The bot also provides positive news articles to read during these tough times. 
+This is a simple api that gives stats on Covid-19 in the US & UK. The api also provides some good news in light of recent times all transmitted via WhatsApp.
 
 ### How it works
 
-Users interact with the WhatsApp App to communicate with the chatbot. 
+Users interact with WhatsApp to communicate with the ChatBot. 
+The Bot replies to greetings along with different variations of the following questions.
 
-The Chatbot replies to greetings along with different variations of the following questions.
+### Sample Questions:
 
-Sample Questions:
-
+Input | Output| 
+---------|----------|
+Greeting!| Hi | 
+Hi, How is it going? | Good | 
+uk confirmed cases? | Confirmed Uk Cases 165221 | 
+How many uk confirmed cases? | Confirmed Uk Cases 165221 
+What are the us covid stats? | United States Stats: confirmed: 1055303 recovered: 144423 critical: 18665 deaths: 61112
+uk stats |United Kingdom Stats: confirmed: 165221 recovered: 1918 critical: 1559 deaths: 26097
+what are the uk covid stats? | United Kingdom Stats: confirmed: 165221 recovered: 1918 critical: 1559 deaths: 26097
+how many have us recovered cases? | Recovered Us Cases 147411
+tell me some positive news, please? | https://www.theguardian.com/news/2020/apr/13/coronavirus-looking-for-good-news-run-for-heroes-and-an-opera-singing-doctor
 
 
 
 ## Features
 
-- Node.js web server using [Express.js](https://npm.im/express)
-- Basic web user interface using [Handlebars](https://npm.im/express-handlebars) for templating and Bootstrap for UI
-- User interface to create reminders.
-- Unit tests using [`mocha`](https://npm.im/mocha) and [`chai`](https://npm.im/chai)
-- End to End UI testing using [Cypress](https://www.cypress.io/)
-- [Automated CI testing using GitHub Actions](/.github/workflows/nodejs.yml)
-- Linting and formatting using [ESLint](https://npm.im/eslint) and [Prettier](https://npm.im/prettier)
-- Interactive configuration of environment variables upon running `npm run setup` using [`configure-env`](https://npm.im/configure-env)
-- Project specific environment variables using `.env` files and [`dotenv-safe`](https://npm.im/dotenv-safe) by comparing `.env.example` and `.env`.
-- One click deploy buttons for Heroku, Glitch and now.sh
+- Python web framework using [FastApi](https://fastapi.tiangolo.com/)
+- [Twilio](https://www.twilio.com/whatsapp) API for WhatsApp 
+- Automated responses and bot training with [Chatterbot](https://chatterbot.readthedocs.io/en/stable/)
+- Testing with [`pytest`](https://docs.pytest.org/en/latest/)
+- Automated CI testing using [Travis CI](https://travis-ci.com/github/ari-hacks/covid-chatbot)
+- Project specific environment variables using `.env` 
+- Built-in API documentation with Open API [docs](https://covid-chatterbot.herokuapp.com/docs)
+- One click deploy buttons for Heroku
 
-## How to use it
-
-1. Create a copy using [GitHub's repository template](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template) functionality
-2. Update the [`README.md`](README.md), [`package.json`](package.json) and [`app.json`](app.json) with the respective values.
-3. Build your app as necessary while making sure the tests pass.
-4. Publish your app to GitHub
 
 ## Set up
 
 ### Requirements
 
-- [Node.js](https://nodejs.org/)
-- A Twilio account - [sign up](https://www.twilio.com/try-twilio)
+- [Python](https://www.python.org/) 3.8.1
+- A Twilio account - [sign up](https://www.twilio.com/whatsapp)
+- [WhatsApp](https://www.whatsapp.com/)
+- [ngrok](https://ngrok.com/)
 
-### Twilio Account Settings
-
-This application should give you a ready-made starting point for writing your
-own appointment reminder application. Before we begin, we need to collect
-all the config values we need to run the application:
-
-| Config&nbsp;Value | Description                                                                                                                                                  |
-| :---------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Account&nbsp;Sid  | Your primary Twilio account identifier - find this [in the Console](https://www.twilio.com/console).                                                         |
-| Auth&nbsp;Token   | Used to authenticate - [just like the above, you'll find this here](https://www.twilio.com/console).                                                         |
-| Phone&nbsp;number | A Twilio phone number in [E.164 format](https://en.wikipedia.org/wiki/E.164) - you can [get one here](https://www.twilio.com/console/phone-numbers/incoming) |
 
 ### Local development
 
@@ -70,65 +57,79 @@ After the above requirements have been met:
 1. Clone this repository and `cd` into it
 
 ```bash
-git clone git@github.com:twilio-labs/sample-template-nodejs.git
-cd sample-template-nodejs
+git clone https://github.com/ari-hacks/covid-chatbot.git
+cd covid-chatbot
 ```
 
 2. Install dependencies
 
 ```bash
-npm install
+pip3 install chatterbot==1.0.4
+pip3 install twilio 
+pip3 install pytest 
+pip3 install uvicorn    
+pip3 install fastapi  
+pip3 install nltk   
+pip3 install httpx         
 ```
-
-3. Set your environment variables
-
-```bash
-npm run setup
-```
-
-See [Twilio Account Settings](#twilio-account-settings) to locate the necessary environment variables.
 
 4. Run the application
 
 ```bash
-npm start
+uvicorn app.main:app --reload 
+
+#uvicorn runs on http://127.0.0.1:8000    
 ```
 
-Alternatively, you can use this command to start the server in development mode. It will reload whenever you change any files.
+5. Next we need to unzip the ngork [download](https://ngrok.com/download). Ngork creates a secure public tunnel for us to use when communicating with WhatsApp via the twilio API. From your terminal run the following command: 
 
 ```bash
-npm run dev
+./ngrok http 8000
+
+#this port must match the app port
 ```
+6. After you have created your [twilio account](https://www.twilio.com/whatsapp) navigate to the [dashboard's sandbox](https://www.twilio.com/console/sms/whatsapp/sandbox) in the field titled ` when a message comes in ` enter the generated forwarding address from your terminal and save. The forwarding url will look like this: 
 
-5. Navigate to [http://localhost:3000](http://localhost:3000)
+![Alt text](/ngork_ex.png?raw=true "Demo")
 
-That's it!
+
 
 ### Tests
 
 You can run the tests locally by typing:
 
 ```bash
-npm test
+pytest
+```
+### Troubleshooting
+If you run into issues with nltk 
+
+```bash
+#error in terminal related to ssl verification
+#solution - in the terminal run the following commands, make sure you change the version of python accordingly 
+>>/Applications/Python 3.8/Install Certificates.command
+
+>>Python3
+
+>>Import nltk
+
+>>nltk.download() 
 ```
 
 ### Cloud deployment
 
-Additionally to trying out this application locally, you can deploy it to Heroku
+To try this application locally, you can deploy it to Heroku
 
-Please Sign up on [Heroku.com](https://www.heroku.com/)  before Deploying. 
+Please [Sign up](https://www.heroku.com/)  before Deploying. 
 
  [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)                                               
 
-## Resources
 
-- [GitHub's repository template](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template) functionality
 
 ## Contributing
 
 This template is open source and welcomes contributions. All contributions are subject to our [Code of Conduct](https://github.com/twilio-labs/.github/blob/master/CODE_OF_CONDUCT.md).
 
-[Visit the project on GitHub](https://github.com/twilio-labs/sample-template-nodejs)
 
 ## License
 
@@ -137,5 +138,3 @@ This template is open source and welcomes contributions. All contributions are s
 ## Disclaimer
 
 No warranty expressed or implied. Software is as is.
-
-[twilio]: https://www.twilio.com
