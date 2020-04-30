@@ -13,6 +13,6 @@ def test_health():
     assert response.json() == {"Message":'healthy twilio endpoint'}
 
 
-def test_bot():
-    response = client.post("/twilio/bot",json='sent')
-    assert response.status_code == 200
+# def test_bot():
+#     response = client.post("/twilio/bot",json='sent')
+#     assert response.status_code == 200

@@ -33,7 +33,7 @@ tell me some positive news, please? | https://www.theguardian.com/news/2020/apr/
 - Python web framework using [FastApi](https://fastapi.tiangolo.com/)
 - [Twilio](https://www.twilio.com/whatsapp) API for WhatsApp 
 - Automated responses and bot training with [Chatterbot](https://chatterbot.readthedocs.io/en/stable/)
-- Testing with [`pytest`](https://docs.pytest.org/en/latest/)
+- Testing with [`requests_mock`](https://pypi.org/project/requests-mock/) and [`pytest`](https://docs.pytest.org/en/latest/)
 - Automated CI testing using [Travis CI](https://travis-ci.com/github/ari-hacks/covid-chatbot)
 - Project specific environment variables using `.env` 
 - Built-in API documentation with Open API [docs](https://covid-chatterbot.herokuapp.com/docs)
