@@ -14,5 +14,5 @@ def test_health():
 
 
 def test_bot():
-    response = client.post("/twilio/bot")
+    response = client.post("/twilio/bot",json='sent')
     assert response.status_code == 200
