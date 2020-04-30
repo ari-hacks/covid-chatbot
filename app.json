@@ -1,0 +1,6 @@
+
+  "name": "Covid-19 Chatbot",
+  "description": "This is a simple api that gives stats on Covid-19 in the US & UK. The api also provides some good news in light of recent times all transmitted via WhatsApp.",
+  "repository": "https://github.com/ari-hacks/covid-chatbot",
+  "keywords": ["python", "fastapi"]
+}
