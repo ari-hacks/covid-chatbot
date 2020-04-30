@@ -7,7 +7,6 @@ before_install:
   - python3 --version
   - pip3 install -U pip
 env: 
-   global:
     - BASE_URL=http://127.0.0.1:8000
 install:
   - pip3 install -r requirements.txt
