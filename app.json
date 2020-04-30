@@ -1,6 +1,58 @@
 
-  "name": "Covid-19 Chatbot",
+{  "name": "Covid-19 Chatbot",
   "description": "This is a simple api that gives stats on Covid-19 in the US & UK. The api also provides some good news in light of recent times all transmitted via WhatsApp.",
+  "keywords": [
+    "python",
+    "fastapi"
+  ],
+  "website": "https://covid-chatterbot.herokuapp.com/",
   "repository": "https://github.com/ari-hacks/covid-chatbot",
-  "keywords": ["python", "fastapi"]
+  "success_url": "/news/health-check",
+  "env": {
+    "COVID_STATS_ENDPOINT": {
+      "description": "Rapid API for statistics:https://covid-19-data.p.rapidapi.com",
+      "value": ""
+    },
+    "GUARDIAN_ENDPOINT": {
+      "description": "The Guardian API for news: https://content.guardianapis.com",
+      "value": ""
+    },
+    "GUARDIAN_ENDPOINT": {
+      "description": "The Guardian API for news: https://content.guardianapis.com",
+      "value": ""
+    },
+    "GUARDIAN_KEY": {
+      "description": "The Guardian API key",
+      "value": ""
+    },
+    "NEWS_API_KEY": {
+      "description": "",
+      "value": ""
+    },
+    "RAPDIAPI_PROJECT": {
+      "description": "Rapid api account information",
+      "value": ""
+    },
+    "X_RAPIDAPI_HOST": {
+      "description": "Rapid API host name",
+      "value": ""
+    },
+    "X_RAPIDAPI_KEY": {
+      "description": "Rapid API key",
+      "value": ""
+    }
+  },
+  "image": "heroku/python",
+  "buildpacks": [
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-python.git"
+    }
+  ],
+  "environments": {
+    "test": {
+      "scripts": {
+        "test": "pytest"
+      }
+    }
+  }
 }
