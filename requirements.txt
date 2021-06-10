@@ -1,7 +1,7 @@
 requests-mock==1.7.0
 ChatterBot==1.0.4
 chatterbot-corpus==1.2.0
-fastapi==0.52.0
+fastapi==0.65.2
 gunicorn==20.0.4
 httpx==0.12.1
 idna==2.8
