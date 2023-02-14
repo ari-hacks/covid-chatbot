@@ -13,7 +13,7 @@ pytzdata==2019.3
 regex==2020.2.20
 requests==2.22.0
 selenium==3.141.0
-starlette==0.13.2
+starlette==0.25.0
 twilio==6.38.1
 urllib3==1.26.5
 uvicorn==0.11.7
